@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import usePost from "../hooks/usePost";
 
 const AllPosts = () => {
@@ -16,7 +17,10 @@ const AllPosts = () => {
           </div>
           <div className="flex justify-between ">
             <h3 className="mt-3 text-slate-900 font-bold ">{post.title}</h3>
-            <button className="text-md">See More</button>
+
+            <Link to={`/${post.id}`}>
+              <button className="text-md">See More</button>
+            </Link>
           </div>
         </div>
       ))}
