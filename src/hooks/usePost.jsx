@@ -1,6 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 
-const GET_POSTS = gql`
+export const GET_POSTS = gql`
   query GetPosts {
     posts {
       id

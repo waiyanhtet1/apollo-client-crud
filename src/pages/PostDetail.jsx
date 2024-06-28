@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import usePostDetail from "../hooks/usePostDetail";
 
 const PostDetail = () => {
@@ -11,10 +11,11 @@ const PostDetail = () => {
 
   const res = data && data?.posts_by_pk;
 
-  console.log(res);
-
   return (
     <div className="flex flex-col gap-8">
+      <Link to={-1}>
+        <button className="bg-slate-500 text-white p-2 rounded-lg">Back</button>
+      </Link>
       <h1 className="font-bold text-2xl">{res.title}</h1>
       <p className="text-lg">{res.content}</p>
       <div className="flex items-center gap-3">
