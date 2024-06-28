@@ -1,8 +1,8 @@
 import { gql, useQuery } from "@apollo/client";
 
 export const GET_POSTS = gql`
-  query GetPosts {
-    posts {
+  query MyQuery {
+    posts(order_by: { id: desc }) {
       id
       title
       user {

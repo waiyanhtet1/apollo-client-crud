@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import usePostDetail from "../hooks/usePostDetail";
+import DeletePost from "./DeletePost";
 
 const PostDetail = () => {
   const { id } = useParams();
@@ -14,7 +15,7 @@ const PostDetail = () => {
   return (
     <div className="flex flex-col gap-8">
       <Link to={-1}>
-        <button className="bg-slate-500 text-white p-2 rounded-lg">Back</button>
+        <button className="bg-slate-500 text-white p-2 rounded">Back</button>
       </Link>
       <h1 className="font-bold text-2xl">{res.title}</h1>
       <p className="text-lg">{res.content}</p>
@@ -23,6 +24,10 @@ const PostDetail = () => {
         <p className="text-sm">
           {res.user.name} - {res.user.email}
         </p>
+      </div>
+
+      <div className="self-end">
+        <DeletePost id={res.id} />
       </div>
       <div>
         <p className="font-bold">Comments:</p>
