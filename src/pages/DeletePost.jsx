@@ -19,8 +19,8 @@ const DeletePost = ({ id }) => {
       await deletePost({
         variables: { id: itemId },
         refetchQueries: [GET_POSTS],
+        onCompleted: () => navigate(-1),
       });
-      navigate(-1);
     } catch (error) {
       console.log(error);
     }
